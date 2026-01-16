@@ -8,7 +8,7 @@ import shutil
 import threading
 from dataclasses import dataclass
 from pathlib import Path
-from tkinter import BOTH, LEFT, RIGHT, TOP, VERTICAL, W, X, Y, filedialog, messagebox
+from tkinter import BOTH, LEFT, RIGHT, TOP, VERTICAL, W, X, Y, Text, filedialog, messagebox
 from tkinter import StringVar, Tk, ttk
 
 import httpx
@@ -223,7 +223,7 @@ class ScreeningApp:
         self.first_tree.pack(side=LEFT, fill=BOTH, expand=True)
         scrollbar.pack(side=RIGHT, fill=Y)
 
-        self.first_log = ttk.Text(self.first_tab, height=6)
+        self.first_log = Text(self.first_tab, height=6)
         self.first_log.pack(fill=X, padx=5, pady=5)
         self.first_log.insert("end", "失败日志将在此显示。\n")
         self.first_log.configure(state="disabled")
@@ -273,7 +273,7 @@ class ScreeningApp:
         self.second_tree.pack(side=LEFT, fill=BOTH, expand=True)
         scrollbar.pack(side=RIGHT, fill=Y)
 
-        self.second_log = ttk.Text(self.second_tab, height=6)
+        self.second_log = Text(self.second_tab, height=6)
         self.second_log.pack(fill=X, padx=5, pady=5)
         self.second_log.insert("end", "失败日志将在此显示。\n")
         self.second_log.configure(state="disabled")
